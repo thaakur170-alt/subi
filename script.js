@@ -441,7 +441,7 @@ musicBtn.onclick = () => {
 // FINAL CINEMATIC MESSAGE
 // ===============================
 const finalMessage = document.getElementById("finalMessage");
-const endingText = "आज तिम्रो special day मा म टाढा भए पनि मेरो heart सधैं तिमीसँगै छ। 🥺🤍\n\nसधैं यसरी नै हाँसिरहनू, happy रहनू, अनि आफ्नो dreams पूरा गर्दै जानू। 🌸❤️🎀\n\nNever stop smiling ❤️";
+const endingText = "Every memory on this website is my favorite because you're in it.🌸❤️🎀\n\n Here's to making many more. ❤️";
 let endIndex = 0;
 
 function typeEnding() {
