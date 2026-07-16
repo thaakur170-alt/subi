@@ -1,0 +1,2450 @@
+*{
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+margin:0;
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:'Poppins',sans-serif;
+
+
+background:
+linear-gradient(
+-45deg,
+#ff9a9e,
+#fad0c4,
+#fbc2eb,
+#a18cd1
+);
+
+
+background-size:400% 400%;
+
+animation:bgMove 15s ease infinite;
+
+}
+
+
+
+
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+
+
+
+
+
+/* =====================
+GLOBAL
+===================== */
+
+
+.hidden{
+
+display:none !important;
+
+}
+
+
+
+
+
+h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:55px;
+
+color:white;
+
+}
+
+
+
+h2{
+
+color:white;
+
+}
+
+
+
+p{
+
+color:white;
+
+font-size:20px;
+
+line-height:1.7;
+
+}
+
+
+
+
+
+
+button{
+
+padding:15px 35px;
+
+margin:15px;
+
+border:none;
+
+border-radius:50px;
+
+
+background:
+linear-gradient(
+45deg,
+#ff416c,
+#ff85a2
+);
+
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+user-select:none;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+button:disabled{
+
+opacity:.6;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
+
+
+
+/* =====================
+CARDS
+===================== */
+
+
+/* =====================
+CARDS (Fixed to Hide Scrollbars globally)
+===================== */
+.card {
+    width: min(750px, 90%);
+    max-height: 90vh;
+    padding: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(20px);
+    border-radius: 35px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .25);
+    animation: showCard .8s ease;
+
+    /* These lines completely hide the scrollbar while keeping things functional */
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.card::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+
+
+@keyframes showCard{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px)
+scale(.9);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+
+
+
+
+
+
+
+/* =====================
+INTRO
+===================== */
+
+
+.intro{
+
+position:fixed;
+
+inset:0;
+
+z-index:999;
+
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+
+background:
+linear-gradient(
+180deg,
+#15001d,
+#45005c,
+#000
+);
+
+
+transition:1s;
+
+}
+
+
+
+
+
+.intro.hide{
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+
+
+
+
+.night-sky{
+
+position:absolute;
+
+inset:0;
+
+z-index:0;
+
+overflow:hidden;
+
+
+background:
+linear-gradient(
+180deg,
+#050014,
+#21003d,
+#000
+);
+
+}
+
+
+
+
+#introText,
+#enter,
+#countdown,
+#birthdayReveal,
+#sparkles{
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+
+
+
+
+/* =====================
+STARS
+===================== */
+
+
+.stars{
+
+position:absolute;
+
+inset:0;
+
+
+background-image:
+
+radial-gradient(
+white 2px,
+transparent 2px
+);
+
+
+background-size:80px 80px;
+
+
+opacity:.8;
+
+
+animation:
+starMove 30s linear infinite;
+
+}
+
+
+
+
+@keyframes starMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-200px);
+
+}
+
+}
+
+
+
+
+
+/* MOON */
+
+
+.moon{
+
+position:absolute;
+
+top:80px;
+
+right:80px;
+
+font-size:100px;
+
+
+filter:
+drop-shadow(0 0 40px white);
+
+
+animation:
+moonFloat 5s infinite alternate;
+
+}
+
+
+
+@keyframes moonFloat{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(20px);
+
+}
+
+}
+
+
+
+
+
+/* CLOUDS */
+
+
+.cloud{
+
+position:absolute;
+
+font-size:90px;
+
+opacity:.3;
+
+animation:
+cloudMove 25s linear infinite;
+
+}
+
+
+
+.cloud1{
+
+top:200px;
+
+left:-200px;
+
+}
+
+
+
+.cloud2{
+
+top:350px;
+
+left:-300px;
+
+animation-duration:35s;
+
+}
+
+
+
+@keyframes cloudMove{
+
+to{
+
+transform:translateX(140vw);
+
+}
+
+}
+
+/* =====================
+BALLOONS & HEARTS
+===================== */
+
+
+.balloons{
+
+position:fixed;
+
+top:110%;
+
+font-size:70px;
+
+animation:
+balloonsUp 12s linear infinite;
+
+}
+
+
+
+@keyframes balloonsUp{
+
+to{
+
+transform:
+translateY(-130vh);
+
+}
+
+}
+
+
+
+
+.hearts span{
+
+position:absolute;
+
+bottom:-50px;
+
+font-size:35px;
+
+animation:
+heartMove 10s linear infinite;
+
+}
+
+
+
+.hearts span:nth-child(1){
+
+left:10%;
+
+}
+
+
+.hearts span:nth-child(2){
+
+left:30%;
+
+animation-duration:12s;
+
+}
+
+
+.hearts span:nth-child(3){
+
+left:50%;
+
+}
+
+
+.hearts span:nth-child(4){
+
+left:70%;
+
+animation-duration:8s;
+
+}
+
+
+.hearts span:nth-child(5){
+
+left:90%;
+
+}
+
+
+
+
+@keyframes heartMove{
+
+to{
+
+transform:
+
+translateY(-120vh)
+rotate(360deg);
+
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+
+
+/* =====================
+CAKE
+===================== */
+
+
+.cake{
+
+font-size:90px;
+
+animation:
+bounce 1.5s infinite;
+
+}
+
+
+
+@keyframes bounce{
+
+50%{
+
+transform:
+translateY(-20px);
+
+}
+
+}
+
+
+
+
+.cake-area{
+
+text-align:center;
+
+}
+
+
+
+.candles{
+
+font-size:45px;
+
+margin-top:-35px;
+
+animation:
+flame 1s infinite alternate;
+
+}
+
+
+
+.candles.out{
+
+animation:none;
+
+opacity:.4;
+
+filter:grayscale(1);
+
+}
+
+
+
+
+@keyframes flame{
+
+to{
+
+transform:
+scale(1.15);
+
+}
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+GIFT
+===================== */
+
+
+.gift-box{
+
+font-size:130px;
+
+cursor:pointer;
+
+animation:
+giftFloat 2s infinite;
+
+}
+
+
+
+@keyframes giftFloat{
+
+50%{
+
+transform:
+translateY(-20px);
+
+}
+
+}
+
+
+
+
+.gift-box.open{
+
+animation:
+giftOpen 1s;
+
+}
+
+
+
+
+@keyframes giftOpen{
+
+50%{
+
+transform:
+
+scale(1.4)
+rotate(20deg);
+
+}
+
+}
+
+
+
+
+
+
+
+/* =====================
+COUNTDOWN
+===================== */
+
+
+#countdown{
+
+position:absolute;
+
+text-align:center;
+
+}
+
+
+
+
+#countNumber{
+
+font-size:150px;
+
+font-family:'Poppins',sans-serif;
+
+text-shadow:
+0 0 40px white;
+
+
+animation:
+countPop 1s;
+
+}
+
+
+
+@keyframes countPop{
+
+from{
+
+transform:
+scale(0);
+
+opacity:0;
+
+}
+
+
+to{
+
+transform:
+scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+
+
+#birthdayReveal{
+
+text-align:center;
+
+animation:
+reveal 2s;
+
+}
+
+
+
+#birthdayReveal h1{
+
+font-size:70px;
+
+animation:
+glowText 1.5s infinite;
+
+}
+
+
+
+@keyframes reveal{
+
+from{
+
+opacity:0;
+
+transform:
+scale(.5);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+scale(1);
+
+}
+
+}
+
+
+
+
+
+@keyframes glowText{
+
+50%{
+
+text-shadow:
+
+0 0 20px pink,
+
+0 0 50px white;
+
+}
+
+}
+
+
+
+
+
+
+/* =====================
+SPARKLES
+===================== */
+
+
+#sparkles{
+
+position:absolute;
+
+font-size:80px;
+
+letter-spacing:30px;
+
+animation:
+sparkleExplosion 2s forwards;
+
+}
+
+
+
+@keyframes sparkleExplosion{
+
+0%{
+
+transform:
+scale(0);
+
+opacity:0;
+
+}
+
+
+50%{
+
+transform:
+scale(1.5);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+scale(3);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+
+
+/* =====================
+LETTER
+===================== */
+
+
+.handwriting{
+
+font-family:'Dancing Script',cursive;
+
+font-size:35px;
+
+}
+
+
+
+
+
+
+
+/* =====================
+MEMORY BOOK
+===================== */
+
+
+.book{
+
+perspective:1000px;
+
+}
+
+
+
+
+.page{
+
+display:none;
+
+background:white;
+
+padding:120px;
+
+border-radius:25px;
+
+animation:
+pageTurn .5s;
+
+}
+
+
+
+.page.active{
+
+display:block;
+
+}
+
+
+
+
+.page img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+
+
+.page h2{
+
+color:#ff4f81;
+
+font-family:'Dancing Script',cursive;
+
+font-size:40px;
+
+}
+
+
+
+
+.page p{
+
+color:#555;
+
+}
+
+
+
+
+@keyframes pageTurn{
+
+from{
+
+transform:
+rotateY(-90deg);
+
+opacity:0;
+
+}
+
+
+to{
+
+transform:
+rotateY(0);
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+/* =====================
+STORY
+===================== */
+
+
+.event{
+
+background:
+rgba(255,255,255,.2);
+
+
+padding:20px;
+
+margin:20px;
+
+border-radius:20px;
+
+}
+
+/* =====================
+MAGIC CURSOR EFFECT
+===================== */
+
+
+.magic-star{
+
+position:fixed;
+
+pointer-events:none;
+
+font-size:20px;
+
+z-index:99999;
+
+animation:
+magicFade 1s forwards;
+
+}
+
+
+
+@keyframes magicFade{
+
+0%{
+
+opacity:1;
+
+transform:
+scale(1)
+translateY(0);
+
+}
+
+
+100%{
+
+opacity:0;
+
+transform:
+
+scale(2)
+translateY(-50px)
+rotate(180deg);
+
+}
+
+}
+
+
+
+
+.magic-burst{
+
+position:fixed;
+
+pointer-events:none;
+
+font-size:30px;
+
+z-index:99999;
+
+animation:
+burst 1.2s forwards;
+
+}
+
+
+
+@keyframes burst{
+
+from{
+
+opacity:1;
+
+transform:
+scale(.5);
+
+}
+
+
+to{
+
+opacity:0;
+
+transform:
+scale(1.5);
+
+}
+
+}
+
+
+
+
+
+
+
+/* =====================
+MUSIC BUTTON
+===================== */
+
+
+.music-button{
+
+
+position:fixed;
+
+top:25px;
+
+right:25px;
+
+
+width:60px;
+
+height:60px;
+
+
+border-radius:50%;
+
+
+font-size:28px;
+
+
+padding:0;
+
+
+z-index:9999;
+
+
+background:
+rgba(255,255,255,.25);
+
+
+backdrop-filter:blur(10px);
+
+
+animation:
+musicPulse 2s infinite;
+
+}
+
+
+
+
+
+@keyframes musicPulse{
+
+
+50%{
+
+transform:
+scale(1.15);
+
+}
+
+}
+
+
+
+
+.music-button.playing{
+
+
+animation:
+musicRotate 3s linear infinite;
+
+}
+
+
+
+@keyframes musicRotate{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+
+
+
+
+/* =====================
+LOADING SCREEN
+===================== */
+
+
+#loader{
+
+
+position:fixed;
+
+
+inset:0;
+
+
+z-index:10000;
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ff9a9e,
+
+#fad0c4,
+
+#fbc2eb
+
+);
+
+
+transition:1.5s;
+
+
+}
+
+
+
+#loader.hide{
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+
+
+
+#loader h1{
+
+font-size:45px;
+
+text-align:center;
+
+}
+
+
+
+.loading-heart{
+
+
+font-size:90px;
+
+
+animation:
+
+heartbeat 1s infinite;
+
+
+}
+
+
+
+.loading-bar{
+
+
+width:250px;
+
+
+height:20px;
+
+
+background:
+
+rgba(255,255,255,.4);
+
+
+border-radius:20px;
+
+
+overflow:hidden;
+
+
+margin-top:30px;
+
+
+}
+
+
+
+#progress{
+
+
+height:100%;
+
+
+width:0%;
+
+
+background:white;
+
+
+border-radius:20px;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+#loadingText{
+
+font-size:25px;
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+SECRET SURPRISE
+===================== */
+
+
+.secret-heart{
+
+
+position:fixed;
+
+
+right:30px;
+
+
+bottom:30px;
+
+
+font-size:70px;
+
+
+cursor:pointer;
+
+
+z-index:1000;
+
+
+animation:
+
+heartbeat 1s infinite;
+
+
+}
+
+
+
+
+@keyframes heartbeat{
+
+
+50%{
+
+
+transform:
+
+scale(1.25);
+
+
+}
+
+}
+
+
+
+
+
+
+
+.secret-popup{
+
+
+position:fixed;
+
+
+inset:0;
+
+
+z-index:9998;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+background:
+
+rgba(0,0,0,.5);
+
+
+backdrop-filter:blur(10px);
+
+
+}
+
+
+
+
+/* ==========================
+   SECRET SURPRISE (Super Compact & Elegant)
+========================== */
+.secret-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+}
+
+/* Made the popup box much narrower and tighter */
+.secret-box {
+    width: min(340px, 85%); /* Reduced from 500px to a cute 340px width */
+    padding: 20px 15px;      /* Tighter padding so it's less bulky */
+    text-align: center;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    animation: secretOpen 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.secret-box h1 {
+    color: #ff4f81;
+    font-size: clamp(24px, 5vw, 28px); /* Compact cursive title */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.secret-box p {
+    color: #555;
+    font-size: 14px; /* Cozy, readable text size */
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+/* Tiny, cute, and completely proportional round image */
+.secret-box img {
+    display: block;
+    width: 50px;           /* Tiny circle badge size (was occupying full width) */
+    height: 110px;          /* Square crop aspect */
+    object-fit: cover;
+    border-radius: 50%;     /* Keeps it perfectly circular */
+    margin: 12px auto;      /* Centered with clean breathing room */
+    border: 3px solid #ff4f81;
+    box-shadow: 0 5px 15px rgba(255, 79, 129, 0.3);
+}
+
+.secret-box button {
+    padding: 10px 25px;     /* Smaller button size to match */
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+@keyframes secretOpen {
+    from {
+        transform: scale(0.6) rotate(-5deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* =====================
+FINAL SCENE
+===================== */
+
+
+#finalScene{
+
+
+position:fixed;
+
+
+inset:0;
+
+
+width:100%;
+
+
+height:100%;
+
+
+z-index:500;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.sunset{
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#ff9966,
+
+#ff5e62,
+
+#3a003d
+
+);
+
+
+}
+
+
+
+
+.final-content{
+
+
+position:relative;
+
+
+z-index:2;
+
+
+text-align:center;
+
+
+padding:30px;
+
+
+}
+
+
+
+
+#finalTitle{
+
+
+font-size:70px;
+
+
+animation:
+
+finalGlow 2s infinite;
+
+
+}
+
+
+
+
+
+#finalMessage{
+
+
+font-size:35px;
+
+
+font-family:'Dancing Script',cursive;
+
+
+min-height:100px;
+
+
+}
+
+
+
+
+
+@keyframes finalGlow{
+
+
+50%{
+
+
+text-shadow:
+
+0 0 30px white,
+
+0 0 70px pink;
+
+
+}
+
+}
+
+
+
+
+.heart-explosion{
+
+
+font-size:120px;
+
+
+animation:
+
+heartBoom 2s infinite;
+
+
+}
+
+
+
+
+
+@keyframes heartBoom{
+
+
+50%{
+
+
+transform:
+
+scale(1.3);
+
+
+}
+
+}
+
+
+
+
+
+.made{
+
+
+font-size:25px;
+
+
+margin-top:40px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+MOBILE
+===================== */
+
+
+@media(max-width:600px){
+
+
+
+.card{
+
+width:92%;
+
+padding:25px;
+
+max-height:85vh;
+
+}
+
+
+
+
+h1{
+
+font-size:40px;
+
+}
+
+
+
+
+h2{
+
+font-size:28px;
+
+}
+
+
+
+
+p{
+
+font-size:16px;
+
+}
+
+
+
+
+button{
+
+font-size:15px;
+
+padding:12px 25px;
+
+}
+
+
+
+
+.cake{
+
+font-size:80px;
+
+}
+
+
+
+
+.candles{
+
+font-size:35px;
+
+}
+
+
+
+
+.gift-box{
+
+font-size:90px;
+
+}
+
+
+
+
+.handwriting{
+
+font-size:28px;
+
+}
+
+
+
+
+.secret-heart{
+
+font-size:55px;
+
+right:20px;
+
+bottom:20px;
+
+}
+
+
+
+
+.music-button{
+
+width:50px;
+
+height:50px;
+
+font-size:22px;
+
+top:15px;
+
+right:15px;
+
+}
+
+
+
+
+.intro h1{
+
+font-size:35px;
+
+}
+
+
+
+
+#birthdayReveal h1{
+
+font-size:45px;
+
+}
+
+
+
+
+}
+/* ==========================
+   CINEMATIC FINAL SCENE
+========================== */
+
+
+#finalScene{
+
+
+position:fixed;
+
+
+inset:0;
+
+
+width:100%;
+
+
+height:100%;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.sunset{
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#ff9966,
+
+#ff5e62,
+
+#3a003d
+
+);
+
+
+}
+
+
+
+.final-content{
+
+
+position:relative;
+
+
+z-index:2;
+
+
+text-align:center;
+
+
+padding:30px;
+
+
+}
+
+
+
+#finalTitle{
+
+
+font-size:70px;
+
+
+animation:
+
+finalGlow 2s infinite;
+
+
+}
+
+
+
+
+#finalMessage{
+
+
+font-size:35px;
+
+
+font-family:
+
+'Dancing Script',cursive;
+
+
+min-height:100px;
+
+
+}
+
+
+
+
+@keyframes finalGlow{
+
+
+50%{
+
+
+text-shadow:
+
+0 0 30px white,
+
+0 0 70px pink;
+
+
+}
+
+
+}
+
+
+
+
+
+.heart-explosion{
+
+
+font-size:120px;
+
+
+animation:
+
+heartBoom 2s infinite;
+
+
+}
+
+
+
+
+@keyframes heartBoom{
+
+
+50%{
+
+
+transform:
+
+scale(1.3);
+
+
+}
+
+
+}
+
+
+
+
+.made{
+
+
+font-size:25px;
+
+
+margin-top:40px;
+
+
+}
+/* ==========================
+   SECRET SURPRISE
+========================== */
+
+
+.secret-heart{
+
+
+position:fixed;
+
+
+right:30px;
+
+
+bottom:30px;
+
+
+font-size:70px;
+
+
+cursor:pointer;
+
+
+z-index:1000;
+
+
+animation:
+
+heartbeat 1s infinite;
+
+
+}
+
+
+
+@keyframes heartbeat{
+
+
+50%{
+
+
+transform:
+
+scale(1.25);
+
+
+}
+
+
+}
+
+
+
+
+
+.secret-popup{
+
+
+position:fixed;
+
+
+inset:0;
+
+
+z-index:9998;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+background:
+
+rgba(0,0,0,.5);
+
+
+backdrop-filter:
+
+blur(10px);
+
+
+}
+
+
+
+.secret-box{
+
+
+width:min(500px,90%);
+
+
+padding:30px;
+
+
+text-align:center;
+
+
+border-radius:30px;
+
+
+background:
+
+rgba(255,255,255,.9);
+
+
+animation:
+
+secretOpen 1s;
+
+
+}
+
+
+
+
+.secret-box h1{
+
+
+color:#ff4f81;
+
+
+}
+
+
+
+
+.secret-box p{
+
+
+color:#555;
+
+
+}
+
+
+
+
+.secret-box img{
+
+
+width:120%;
+
+
+max-height:250px;
+
+
+object-fit:cover;
+
+
+border-radius:20px;
+
+
+margin:20px 0;
+
+
+}
+
+
+
+
+@keyframes secretOpen{
+
+
+from{
+
+
+transform:
+
+scale(.3)
+rotate(-10deg);
+
+
+opacity:0;
+
+
+}
+
+
+to{
+
+
+transform:
+
+scale(1)
+rotate(0);
+
+
+opacity:1;
+
+
+}
+
+
+}
+#cakeCut .cake-piece{
+    font-size:120px;
+}
+
+
+#cakeCut h2{
+    margin-top:20px;
+}
+#introText{
+
+    text-align:center;
+
+    white-space:normal;
+
+    line-height:1.5;
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+/* Add this to styles.css */
+.floating-polaroid {
+    position: fixed;
+    bottom: -150px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 8px 8px 20px 8px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    pointer-events: none;
+    z-index: 10;
+    animation: floatUpward 15s linear infinite;
+}
+.floating-polaroid img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+@keyframes floatUpward {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+/* Breathing helper text for mic blowing */
+.mic-helper {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 5px;
+    font-style: italic;
+    animation: breathingText 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes breathingText {
+    from { opacity: 0.4; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1.02); }
+}
+
+/* ==========================
+   PERFECTLY FITTED SECRET IMAGE
+========================== */
+.secret-box img {
+    display: block !important;
+    width: 100% !important;        /* Spans the available card space */
+    max-width: 240px !important;   /* Limits the image size so it stays cute and small */
+    height: auto !important;       /* Maintains the perfect image proportions */
+    max-height: 180px !important;  /* Prevents it from taking up too much vertical space */
+    object-fit: contain !important; /* Displays the FULL image without cropping the sides */
+    border-radius: 15px !important; /* Soft, elegant rounded corners */
+    margin: 15px auto !important;  /* Perfectly centers the image inside the box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important; /* Subtle romantic shadow */
+}
+
+/* Ensure all images and cards handle mobile scaling correctly */
+* {
+    box-sizing: border-box; /* Prevents padding from breaking widths */
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden; /* Stops horizontal scrolling and shaking on swipe */
+    position: relative;
+}
+
+/* Make sure all cards (gallery, memories, etc.) shrink properly */
+.card, .container, .page {
+    width: min(90%, 450px) !important; /* Constrains width on laptops, matches screen on mobile */
+    margin: 15px auto !important;
+    padding: 20px 15px !important; /* Tightens breathing room for tiny screens */
+}
+
+/* Prevent any horizontal page stretching from pictures */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Add these three properties to any floating, drifting, or pulsing elements */
+.balloon, .floating-heart, .magic-symbol, .secret-heart {
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0); /* Forces mobile hardware acceleration */
+    backface-visibility: hidden;
+}
+
+/* Typography optimization for mobile */
+h1, .title {
+    font-size: clamp(24px, 6vw, 38px) !important; /* Scalable title font */
+    line-height: 1.2;
+}
+
+p, .message, #finalMessage {
+    font-size: clamp(14px, 4vw, 18px) !important; /* Scalable body text */
+    line-height: 1.5;
+}
+/* Hides the music button completely but keeps the music playing in the background */
+#musicBtn {
+    display: none !important;
+}
+/* Helper styles to prevent text overlapping in the birthday card */
+
+.birthday-intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px !important; /* Forces spacing below the paragraph */
+    padding: 0 10px;
+}
+
+.candle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px !important; /* Forces spacing below the candles before the button */
+    height: auto;
+}
+
+#candles {
+    font-size: 50px !important;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}

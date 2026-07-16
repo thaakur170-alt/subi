@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday meri maya ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght=700&family=Poppins:wght=400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="loader">
+    <h1>✨ Preparing Something Special ✨</h1>
+    <div class="loading-heart">❤️</div>
+    <div class="loading-bar">
+        <div id="progress"></div>
+    </div>
+    <p id="loadingText">0%</p>
+</div>
+
+<div class="intro" id="intro">
+    <div class="night-sky">
+        <div class="moon">🌙</div>
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+        <div class="stars"></div>
+    </div>
+    <h1 id="introText"></h1>
+    <button id="enter">Enter Subika's Surprise 🎁</button>
+
+    <div id="countdown" class="hidden">
+        <h1 id="countNumber"></h1>
+    </div>
+
+    <div id="birthdayReveal" class="hidden">
+        <h1 id="birthdayTitle"></h1>
+        <p>A special day for a very special person ❤️</p>
+    </div>
+
+    <div id="sparkles" class="hidden">✨ ✨ ✨ ✨ ✨</div>
+</div>
+
+<div class="balloons">🎈 🎈 🎈 🎈 🎈</div>
+<div class="hearts">
+    <span>❤️</span>
+    <span>💖</span>
+    <span>💕</span>
+    <span>✨</span>
+    <span>🎈</span>
+</div>
+
+<section class="card welcome">
+    <h1>A Special Surprise For my dearest person ❤️</h1>
+    <p>Someone amazing deserves something beautiful.</p>
+    <div class="cake">🎂</div>
+    <button id="open">Open Birthday Surprise 🎁</button>
+</section>
+<section class="card gift-section hidden">
+
+<h1 id="giftHeader">
+A Gift For You Sanu
+</h1>
+    <div class="gift-box" id="giftBox">🎁</div>
+    <button id="openGift">Open Gift ✨</button>
+    <div id="giftMessage" class="hidden">
+        <h1>🎉 Surprise 🎉</h1>
+        <p>Today is all about celebrating YOU ❤️</p>
+        <button id="continueBirthday" class="hidden">Continue To Birthday 🎂</button>
+    </div>
+</section>
+
+<section class="card birthday hidden">
+
+    <h1>
+    🎂Happy Birthday🎂
+    MY LOVE
+    </h1>
+
+    <div id="candleArea">
+        <p class="birthday-intro">
+        May your day be filled with happiness, love and beautiful memories.
+        </p>
+
+        <div class="candle-container">
+            <div class="candles" id="candles">🕯️2️⃣1️⃣🕯️</div>
+        </div>
+    </div>
+
+    <button id="blow">Blow Candles 🕯️</button>
+
+    <button id="makeWishBtn" class="hidden">Make a Wish 🌟</button>
+
+    <div id="wishMessage" class="hidden">
+        <h2 style="font-size: 28px; color: #ff1493; text-shadow: 0 0 10px rgba(255,20,147,0.3);">
+            ✨ May your wish come true ❤️
+        </h2>
+        <button id="cakeTimeBtn" style="margin-top: 15px;">Cake Time! 🎂</button>
+    </div>
+
+    <div id="cakeRevealArea" class="hidden">
+        <div class="cake" style="font-size: 70px; margin: 20px 0; animation: countPop 1s infinite alternate;">🎂</div>
+        <button id="cutCake">Cut Cake 🔪</button>
+    </div>
+
+    <div id="cakeCut" class="hidden">
+        <div class="cake-piece" style="font-size: 70px; margin: 20px 0;">🍰</div>
+        <h2>Cake Time! 🎉</h2>
+        <p>Enjoy your special day, Sanumaya ❤️</p>
+    </div>
+
+    <button id="wish" class="hidden">Read Birthday Letter 💌</button>
+</section>
+<section class="card letter hidden">
+    <h1>Dear Subi ❤️</h1>
+    <p class="handwriting">
+        Happy Birthday to you mine cutie! 🎂<br><br>
+        I hope your day is filled with smiles, love and unforgettable memories.<br><br>
+        You are a truly special person and deserve every happiness.<br><br>
+        Keep shining always ✨<br><br>
+        With lots of love ❤️
+    </p>
+    <button id="memories">See Memories 📸</button>
+</section>
+
+<section class="card gallery hidden">
+    <h1>📖 Our Memory Book ❤️</h1>
+    <div class="book" id="book">
+        <div class="page active">
+            <img src="image 1.jpeg" alt="Memory 1">
+            <h2>Your first birthday together when you turned 17 ❤️</h2>
+            <p>A moment worth remembering.</p>
+        </div>
+        <div class="page">
+            <img src="image 2.png" alt="Memory 2">
+            <h2>Sweetness when you turned 18✨</h2>
+            <p>Little moments become big memories.</p>
+        </div>
+        <div class="page">
+            <img src="image 3.png" alt="Memory 3">
+            <h2>Special Memories on your 19th birthday 🌸</h2>
+            <p>Smiles that stay forever.</p>
+        </div>
+        <div class="page">
+            <img src="image 4.png" alt="Memory 4">
+            <h2>Forever Beautiful 🎂</h2>
+            <p>More memories to come ❤️</p>
+        </div>
+    </div>
+    <button id="nextPage">Next Memory ➡️</button>
+    <button id="timeline" class="hidden">Our Journey 📖</button>
+</section>
+
+<section class="card story hidden">
+    <h1>Our Beautiful Journey ✨</h1>
+    <div class="event">
+        <h2>🌱 Beginning</h2>
+        <p>Where our beautiful story started... A small beginning that became the start of countless precious memories. 🤍</p>
+    </div>
+    <div class="event">
+        <h2>💕 Moments</h2>
+        <p>All the little laughs, late-night talks, smiles, and memories we created together made this journey so special. 🥺✨</p>
+    </div>
+    <div class="event">
+        <h2>❤️ Today</h2>
+        <p>Today you turn 21, and even though we are miles apart, my heart is always with you. Our story is still being written, and I hope it becomes even more beautiful with time. 🌸</p>
+    </div>
+    <button id="finish">Final Surprise 🎆</button>
+</section>
+
+<div class="secret-heart" id="secretHeart">❤️</div>
+<div id="secretPopup" class="hidden secret-popup">
+    <div class="secret-box">
+        <h1>💌 A Secret For youuuuu</h1>
+        <img src="Secret.jpeg" alt="Secret Memory">
+        <p>
+            You found my little secret ❤️<br><br>
+            You are one of the most precious people in my life.<br><br>
+            Never forget how special you are ✨
+        </p>
+        <button id="closeSecret">Close ❤️</button>
+    </div>
+</div>
+
+<section class="final hidden" id="finalScene">
+    <div class="sunset"></div>
+    <div class="final-content">
+        <h1 id="finalTitle">🎉 HAPPY BIRTHDAY LOVE 🎉</h1>
+        <h2 id="finalMessage"></h2>
+        <div class="heart-explosion">❤️</div>
+        <p class="made">
+            Happy Birthday, my beautiful Subi. 
+            Thank you for being my favourite journey. 
+            I love you forever ❤️🎂
+        </p>
+    </div> 
+</section>
+
+<audio id="music" loop preload="auto">
+    <source src="song.mp3" type="audio/mp3">
+</audio>
+
+<button id="musicBtn" class="music-button">🎵</button>
+
+<div id="magic-container"></div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
