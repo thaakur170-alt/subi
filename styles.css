@@ -2497,3 +2497,19 @@ button, input, select, textarea {
 html {
     -webkit-text-size-adjust: 100%; /* Prevents iOS from auto-resizing text */
 }
+/* ==========================================================================
+   IPHONE & INTRO TEXT FONT FIX
+   ========================================================================== */
+
+#introText {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.handwriting {
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: 700;
+}
