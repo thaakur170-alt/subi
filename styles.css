@@ -34,7 +34,9 @@ body {
 
 /* Apply the local handwriting font */
 .handwriting {
-    font-family: 'DancingScriptLocal', cursive !important;
+    /* Ensures handwritten letter section uses the cursive font */
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: 700;
 }
 *{
 box-sizing:border-box;
