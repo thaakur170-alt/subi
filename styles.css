@@ -2,27 +2,31 @@
    LOCAL FONTS Setup (Ensures identical look on all devices)
    ========================================================================== */
 
-@font-face {
-    font-family: 'PoppinsLocal';
-    src: url('Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+/* Import fonts directly via CSS (this bypasses standard Safari/iOS blocking) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Reset and iOS rendering fixes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@font-face {
-    font-family: 'PoppinsLocal';
-    src: url('Poppins-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+html {
+    -webkit-text-size-adjust: 100%; /* Prevents iOS Safari from auto-scaling text sizes */
 }
 
-@font-face {
-    font-family: 'DancingScriptLocal';
-    src: url('DancingScript-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+body {
+    /* Uses Poppins first; if slow to load, defaults to clean system sans-serif (no serif default!) */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Force standard buttons to look consistent on iPhones */
+button {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* Removes Safari default metallic gradient button styling */
+    appearance: none;
+}
 /* Apply the local fonts globally */
 body {
     font-family: 'PoppinsLocal', sans-serif;
