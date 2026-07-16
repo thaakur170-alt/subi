@@ -2482,3 +2482,12 @@ p, .message, #finalMessage {
     align-items: center;
     justify-content: center;
 }
+/* Force iPhones to render buttons and text exactly like other devices */
+button, input, select, textarea {
+    -webkit-appearance: none; /* Removes Safari default button styling */
+    border-radius: 8px;       /* Keeps your custom round corners */
+}
+
+html {
+    -webkit-text-size-adjust: 100%; /* Prevents iOS from auto-resizing text */
+}
