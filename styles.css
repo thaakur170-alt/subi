@@ -2148,51 +2148,6 @@ margin-top:40px;
 ========================== */
 
 
-.secret-heart{
-
-
-position:fixed;
-
-
-right:30px;
-
-
-bottom:30px;
-
-
-font-size:70px;
-
-
-cursor:pointer;
-
-
-z-index:1000;
-
-
-animation:
-
-heartbeat 1s infinite;
-
-
-}
-
-
-
-@keyframes heartbeat{
-
-
-50%{
-
-
-transform:
-
-scale(1.25);
-
-
-}
-
-
-}
 
 
 
@@ -2512,4 +2467,25 @@ html {
 .handwriting {
     font-family: 'Dancing Script', cursive !important;
     font-weight: 700;
+}
+/* ==========================================================================
+   FORCE SECRET CENTER HEART TO BE HUGE
+   ========================================================================== */
+
+.huge-center-heart {
+    font-size: 90px !important; /* Forces it to be massive */
+    line-height: 1 !important;
+    margin: 40px auto !important; /* Creates clear spacing above and below it */
+    display: block !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    user-select: none;
+    filter: drop-shadow(0 0 25px rgba(255, 20, 147, 0.6)); /* Beautiful pink glow effect */
+    animation: finalPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes finalPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
 }
